@@ -1,0 +1,12 @@
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+.listItem
+{
+  height: 90rpx;
+  width:100%;
+  border-bottom: 1px grey dashed;
+  background-color: honeydew;
+  align-items: center;
+}

@@ -1,0 +1,12 @@
+<view bindtap="getTap">
+	<!--对所有区域都获取到点击事件-->
+	<view wx:for="{{list}}">
+		<view id="outOfListItem">我是列表项目外区域</view>
+		<mp-slideview id="slideview" buttons="{{buttons}}" show="{{item.slideviewShow}}" bindshow="showSlideview" data-Index="{{index}}">
+			<view id="listItem" class="listItem" data-Index="{{index}}">
+				<text>{{item.listName}}</text>
+			</view>
+		</mp-slideview>
+	</view>
+	<view id="outOfList" style="height:100rpx;border:1px dashed black;">我是整个列表外区域</view>
+</view>
