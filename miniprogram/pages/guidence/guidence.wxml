@@ -1,0 +1,21 @@
+<!--pages/guidence/guidence.wxml-->
+<view class="banXwayScroll">
+  <view class="userInfo">
+    <open-data type="userAvatarUrl" class="userinfo-avatar"></open-data>
+    <image src='../../images/guider.png' class="addIcon"></image>
+    <text class="listNum" style="margin-left:110rpx;">我是教程</text>
+  </view>
+  <swiper style="height:1000rpx;" vertical="true" indicator-active-color="#F57F85" indicator-color="#80adb6"
+  indicator-dots="true" autoplay="true" duration="7000" circular="true">
+    <swiper-item>
+      <image src="../../images/guide1.png" class="swiperPic" mode="aspectFill"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="../../images/guide2.png" class="swiperPic" mode="aspectFit"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="../../images/guide3.png" class="swiperPic" mode="aspectFit"></image>
+    </swiper-item>
+  </swiper>
+  <button catchtap="gottcha" class="iKnowButton">我知道了</button>
+</view>

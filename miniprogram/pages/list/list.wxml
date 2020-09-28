@@ -1,0 +1,39 @@
+<!--pages/list/list.wxml-->
+<view class="banXwayScroll">
+	<view class="userInfo">
+		<open-data type="userAvatarUrl" class="userinfo-avatar"></open-data>
+		<image src='../../images/add5.png' class="addIcon" catchtap="addList"></image>
+		<text class="listNum">列表数: {{list.length}}</text>
+		<image src='../../images/help5.png'  class="helpIcon" catchtap="goToHelp"></image>
+	</view>
+
+	<view id="movebox"><!--格式：id、显示条件、事件/数据、属性、样式-->
+		<block wx:for='{{list}}' wx:key='this' wx:for-item='parentItem' wx:for-index='parentIndex'><!--列表-->
+			<view id="movelist{{parentIndex}}" data-parentindex='{{parentIndex}}' catchlongpress="dragList" catchtouchmove="listItemMove" catchtouchend="listItemMove" class="{{dragable? 'itemTransition':' '}}" >
+				<view style="transition: transform 0.2s;"></view>
+				<mp-slideview id="listSlideview" catchbuttontap="slideViewButton"  data-index='{{index}}' data-parentindex='{{parentIndex}}' buttons="{{slideButtons}}" icon="{{true}}" >
+					<view wx:key='{{parentItem}}' class='list_name_box' style="position:relative;">
+						<image src="../../images/sort2.png" class="icon"></image>
+						<text id="ListName"  wx:if='{{!parentItem.listNameEdit}}' catchtap="editValue" data-parentindex='{{parentIndex}}' class='list_box_text {{parentItem.inbox&&"inbox"}}' style="{{ nowmoveindex==parentIndex? 'color:#F57F85;' : ' ' }} {{moveoutindex==parentIndex?'color:#0089A7;':' '}} " >{{parentItem.listName}} </text>
+						<input id="ListName"  wx:if="{{parentItem.listNameEdit}}" catchblur="editValue" data-parentindex='{{parentIndex}}' placeholder="请输入新的列表名" auto-focus="true" ></input>
+						<image wx:if='{{parentItem.show}}' catchtap='addTap'  data-parentindex='{{parentIndex}}' src="../../images/add.png" class="icon"></image>
+						<image catchtap='openTap'  data-parentindex='{{parentIndex}}' src='../../images/open1.png' class='icon_down {{parentItem.show&&"icon_down_rotate"}}'></image>
+					</view>
+				</mp-slideview>
+				<!--注意mp-->
+			</view>
+			<view wx:if='{{parentItem.show}}'><!--子项列表-->
+				<view wx:for='{{parentItem.item}}' wx:key='this' data-index='{{index}}' data-parentindex='{{parentIndex}}' class='list_item'>
+					<mp-slideview id="itemSlideview" catchbuttontap="slideViewButton" data-index='{{index}}' data-parentindex='{{parentIndex}}'  buttons="{{slideButtons}}" icon="{{true}}" >
+						<view class="list_item_name_box" >
+							<image src="../../images/list3.png" class="icon"></image>
+							<text id="ItemName" wx:if="{{!item.itemNameEdit}}" catchtap="editValue"  data-parentindex='{{parentIndex}}' data-index='{{index}}'  class='list_box_text {{item.inbox&&"inbox"}}' >{{item.itemName}}</text>
+							<input id="ItemName"  wx:if="{{item.itemNameEdit}}" catchblur="editValue" data-parentindex='{{parentIndex}}' data-index='{{index}}' placeholder="请输入新的子项目名" auto-focus="true" ></input>
+						</view>
+					</mp-slideview>
+				</view>
+			</view>
+		</block>
+	</view>
+
+</view>

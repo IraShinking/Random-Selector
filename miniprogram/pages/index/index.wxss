@@ -1,0 +1,75 @@
+/**index.wxss**/
+page {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.scroll-viewX
+{
+  height:470rpx;
+  width:100%;
+  white-space: nowrap;
+  display: flex;
+  border:1px solid lightgrey;
+}
+.scroll-viewY
+{
+  height:470rpx;
+  width:100%;
+}
+.buttonList
+{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+/*button样式*/
+.buttons{
+  background-color: #fff;
+}
+.inline_list_name_box
+{
+  display:flex;
+  align-content:center;
+  justify-content:center;
+  padding-top:15rpx;
+}
+/*列表名所在box*/
+.list_name_box{
+  display: inline-block;
+  border-bottom:1px dashed lightgray;
+
+}
+/*子项目box*/
+.list_item_name_box{
+  justify-content: center;
+  height: 80rpx;
+  margin:0rpx;
+}
+/*子项目的列表*/
+.list_item{
+  display: flex;
+  flex-direction: row;
+  }
+
+.chose{
+  background-color: lightgray;
+}
+/*已选中和抽取结果的样式*/
+.showChoose
+{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left:20rpx;
+  margin-right:10rpx;
+  margin-bottom: 5rpx;
+  color:#F57F85;
+}
+.selectText
+{
+  margin:20rpx;
+  color:#00809e;
+}
+

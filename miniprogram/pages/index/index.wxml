@@ -1,0 +1,56 @@
+<!--index.wxml-->
+<view class="banXwayScroll">
+
+	<view class="userInfo">
+		<open-data type="userAvatarUrl" class="userinfo-avatar"></open-data>
+		<image src='../../images/add5.png' class="addIcon" catchtap="goToList"></image>
+		<text class="listNum">列表数: {{list.length}}</text>
+		<image src='../../images/help5.png' class="helpIcon" catchtap="goToHelp"></image>
+	</view>
+
+	<scroll-view class="scroll-viewX" scrollX enable-flex="{{true}}">
+		<view wx:for='{{list}}' wx:key='this' wx:for-item='parentItem' wx:for-index='parentIndex'>
+			<view id="listNameBox" class='list_name_box {{parentItem.chose &&"chose"}}' wx:key='{{parentItem}}'>
+				<view class="inline_list_name_box">
+					<text class='list_item_name {{parentItem.inbox &&"inbox"}}' data-parentindex='{{parentIndex}}'
+						catchtap="chooseList">{{parentItem.listName}}</text>
+					<image src='../../images/open1.png' class='icon_down {{parentItem.show&&"icon_down_rotate"}}'
+						catchtap='openTap' data-parentindex='{{parentIndex}}' style="margin-left:15rpx;margin-right:0rpx"></image>
+					<!--展开列表-->
+				</view>
+			</view>
+			<scroll-view class="scroll-viewY" scrollY enable-flex="{{true}}">
+				<!--嵌套，不需要重写组件-->
+				<view wx:if='{{parentItem.show}}' class='list_item' wx:for='{{parentItem.item}}' wx:key='this' style="border-bottom:1rpx dashed #b8c8cc;">
+					<view class='list_item_name_box' >
+						<text id="ItemName" class='list_item_name {{item.inbox&&"inbox"}}'>{{item.itemName}}</text>
+					</view>
+				</view>
+			</scroll-view>
+		</view>
+	</scroll-view>
+
+	<view class="buttonList">
+		<button catchtap="reset" class="buttons">
+			<image src="../../images/reset.png " style="width:50rpx; height:50rpx; margin-top:20rpx;"></image>
+		</button>
+		<button catchtap="randomSelection" class="buttons">
+			<image src="../../images/random3.png " style="width:100rpx; height:100rpx;"></image>
+		</button>
+	</view>
+	
+	<text class="selectText">已选中的列表：</text>
+	<view class="showChoose">
+		<view wx:for='{{list}}' wx:key='this' wx:for-item='parentItem' wx:for-index='parentIndex'>
+			<view wx-if='{{parentItem.chose}}'> [ {{parentItem.listName}} ] , </view>
+		</view>
+	</view>
+
+	<text class="selectText">这一次抽取结果:</text>
+	<view wx:for='{{list}}' wx:key='this' wx:for-item='parentItem' wx:for-index='parentIndex' class="showChoose">
+		<view wx:if='{{parentItem.chose}}' wx:key='this' wx:for='{{parentItem.item}}'>
+			<view wx:if='{{parentItem.chooseIndex==index}}'>{{parentItem.listName}}: {{item.itemName}}, </view>
+		</view>
+	</view>
+
+</view>

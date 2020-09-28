@@ -1,0 +1,47 @@
+{
+  "pages": [
+
+    "pages/index/index",
+    "pages/list/list",
+    
+    "pages/guidence/guidence",
+    "pages/about/about"
+    
+   
+  ],
+  "window": {
+    "backgroundColor": "#fff",
+  
+    "navigationStyle":"custom"
+ 
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/index1.png",
+        "selectedIconPath":"images/selector2.png"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "iconPath": "images/form11.png",
+        "selectedIconPath":"images/form8.png"
+       
+      },
+      {
+        "pagePath": "pages/about/about",
+        "iconPath": "images/dot6.png",
+        "selectedIconPath": "images/rb1.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "useExtendedLib": {
+    "kbone": true,
+    "weui": true
+  }
+
+}

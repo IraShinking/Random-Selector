@@ -1,0 +1,10 @@
+{
+  
+    
+    "navigationBarBackgroundColor": "#F57F85",
+    "navigationBarTitleText": "关于",
+    "enablePullDownRefresh": false,
+    "disableScroll":true,
+  
+  "usingComponents": {}
+}

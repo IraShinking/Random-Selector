@@ -1,0 +1,27 @@
+<!--pages/about/about.wxml-->
+<view class="aboutInfo">
+	关于
+</view>
+<image class="rabbit" src="../../images/rabbitHead.png"></image>
+<view class="p">
+	祝兔兔20岁生日快乐
+	<text>希望这个抽取器,能帮兔兔打败奶茶选择困难症XD</text>
+</view>
+<view class="p" style="font-style:italic">
+	Hope you all like it!
+	<text>也希望能帮更多的人打败选择困难症!</text>
+</view>
+<view class="p">
+	特别鸣谢：世界上最爱兔的猪
+	<text >提供奶茶选单数据和第二种抽取方案w</text>
+</view>
+<view class="consult" style="align-items: flex-end">
+		<image class="WePic" src="../../images/we.png"></image>
+		<image class="HeartPic" src="../../images/heart1.png">x</image>
+		<image class="rabbitPic" src="../../images/rb3.png">x</image>
+</view>
+<view class="consult">
+	<view style="align-item:baseline;color:#00809e;font-size:large;">问题反馈：</view>
+	<button open-type="contact"  class="consultButton" style="background-color:#fff;">@Ira9b1</button>
+</view>
+	
