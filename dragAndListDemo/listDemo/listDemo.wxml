@@ -1,0 +1,46 @@
+<!--pages/listDemo/listDemo.wxml-->
+<text>pages/listDemo/listDemo.wxml</text>
+
+<image src='../../images/add3.png' class="dustbin" style="margin:40rpx" catchtap="addList"></image>
+
+<view wx:for='{{list}}' wx:key='this' wx:for-item='parentItem' wx:for-index='parentIndex'>
+<view catchlongpress="dragList" catchtouchmove="onTouchMove" 
+			catchtouchend="lastIndex" data-parentindex='{{parentIndex}}' >				<!--需要绑定长按事件 按动拖拽 -->
+		<mp-slideview buttons="{{slideButtons}}" icon="{{true}}" bindbuttontap="buttonTap" data-index='{{index}}' data-parentindex='{{parentIndex}}'>
+			<view id="listNameBox" class='list_name_box' wx:key='{{parentItem}}' >
+
+				<image src="../../images/sort2.png" class="dustbin"></image>
+				<!--排序的提示图标-->
+				<text id="listName" catchtap='editListName'  class='list_item_name' data-parentindex='{{parentIndex}}'  wx:if='{{!parentItem.listNameEdit}}'>{{parentItem.listName}}</text>
+				<!--双击切换输入框-->
+				<!--代码优化时思考逻辑是if还是hidden更快-->
+				<!--渲染text时edit值为假，但wx：if的值为真-->
+				<input id="editListName" wx:if="{{parentItem.listNameEdit}}" data-parentindex='{{parentIndex}}' placeholder="请输入新的列表名" bindblur="editName" auto-focus="true"> data-parentindex='{{parentIndex}}' ></input>
+				<!--修改列表名-->
+				<image id="addListItem" src="../../images/add.png" class="dustbin" style="margin-right:40rpx;" catchtap='addTap' data-parentindex='{{parentIndex}}' wx:if='{{parentItem.show}}'></image>
+				<!--添加列表-->
+				<!--同样思考是否使用hidden逻辑-->
+				<!--<image id="deleteList" src="../../images/dustbin2.png" class="dustbin" catchtap='deleteTap' data-parentindex='{{parentIndex}}'></image>
+			删除列表-->
+				<image id="openList" src='../../images/open1.png' class='icon_down {{parentItem.show&&"icon_down_rotate"}}' catchtap='openTap' data-parentindex='{{parentIndex}}'></image>
+				<!--展开列表-->
+			</view>
+		</mp-slideview>
+		<!--注意mp-->
+		</view>
+		<view class='list_item_box' wx:if='{{parentItem.show}}'>
+			<view class='list_item' wx:for='{{parentItem.item}}' wx:key='this' data-index='{{index}}' data-parentindex='{{parentIndex}}'>
+				<mp-slideview buttons="{{slideButtons}}" icon="{{true}}" bindbuttontap="buttonItemTap" data-index='{{index}}' data-parentindex='{{parentIndex}}'>
+					<view class='list_item_name_box'>
+						<text id="ItemName" class='list_item_name' data-parentindex='{{parentIndex}}' data-index='{{index}}' catchtap="editItemName" wx:if="{{!item.itemNameEdit}}">{{item.itemName}}</text>
+						<!--坑 data-index 的括号里面要写 index 如果写	Index无法识别-->
+						<!--wx：if的条件为假，渲染text框 不知道为什么逻辑和列表的反过来了 坑：用了文本值 反过来才是0 无论如何都是1 -->
+						<input id="EditItem" class='list_item_name' data-parentindex='{{parentIndex}}' data-index='{{index}}' bindblur="editItem" wx:if="{{item.itemNameEdit}}" placeholder="请输入修改内容" auto-focus="true"></input>
+						<!--<image id="deleteItem" src="../../images/dustbin2.png" class="dustbin" catchtap='deleteItem' data-parentindex='{{parentIndex}}' data-index='{{index}}'></image>
+						删除子项目-->
+					</view>
+				</mp-slideview>
+			</view>
+		</view>
+
+</view>

@@ -1,0 +1,9 @@
+.red-color {
+  background: #fc5f2d;
+  font-size: 20rpx;
+}
+
+.slideview .weui-slideview__btn-group_warn .weui-slideview__btn {
+  background: green;
+  }
+  

@@ -1,0 +1,16 @@
+<view>
+复现操作步骤：
+1.先把所有的列表左滑，此时显示正常；
+2.然后点击下方“点击跳转”，在新打开的页面中点击“点击返回”
+</view>
+<view style="height:2rpx;background:#000;"></view>
+<view wx:for="{{dataList}}" wx:for-item="item">
+  <mp-slideview buttons="{{slideButtons}}" icon="{{false}}" class="slideview">
+     <mp-cell value="左滑可以删除" footer="说明文字">
+      <div style="padding:32rpx;">{{item.first}}</div>
+      <div style="padding:32rpx;" wx:if="{{item.second!=''}}">{{item.second}}</div>
+      <div   style="height:2rpx;background:#000;"></div>
+    </mp-cell>
+  </mp-slideview>
+</view>
+<view bindtap="routePage">点击跳转</view>

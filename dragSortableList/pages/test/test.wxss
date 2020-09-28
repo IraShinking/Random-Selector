@@ -1,0 +1,4 @@
+.red-color {
+  background: #fc5f2d;
+  font-size: 20rpx;
+}

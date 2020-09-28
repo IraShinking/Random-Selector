@@ -1,0 +1,10 @@
+<view id="top" wx:for="{{list}}" wx:for-item='parentItem' wx:for-index='parentIndex' wx:key="index">
+<view class="listBox" id="listBox" catchlongpress="listLongPress" 
+catchtouchmove="listTouchMove"catchtouchend="listTouchEnd" data-parentindex="{{parentIndex}}" style="transform:translateY({{parentItem.transY}}px)">
+<text>{{parentItem.listName}}</text>
+</view>
+<!--<view class="itemBox" id="itemBox" wx:for="{{parentItem.item}}"  data-parentindex="{{parentIndex}}" data-index="{{index}}">
+<text>{{item.itemName}}</text>
+</view>-->
+
+</view>

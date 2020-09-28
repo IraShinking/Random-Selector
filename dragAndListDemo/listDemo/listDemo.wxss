@@ -1,0 +1,49 @@
+/* pages/listDemo/listDemo.wxss */
+
+page{
+  background:#fff;
+}
+
+.list_name_box{
+  background: #fff;
+  border-bottom: 1px solid #efefef;
+  display: flex;
+  height: 90rpx;
+  align-items: center;
+
+  padding: 0 25rpx;
+  font-size: 32rpx;
+}
+
+.list_item_name{
+  flex: 1;
+}
+
+.dustbin
+{
+  width: 50rpx;
+  height:50rpx;
+  margin-right: 50rpx;
+}
+
+.list_item_name_box{
+  background: #fff;
+  font-size: 30rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 25rpx 0 50rpx;
+}
+.list_item_name{background-color: beige;}
+.icon_down{
+  width: 40rpx;
+  height:40rpx;
+  margin-left:40rpx;
+  margin-right: 20rpx;
+  transition:transform  0.3s;
+}
+.icon_down_rotate{
+  transform:rotate(180deg);
+}
+
+

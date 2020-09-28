@@ -1,0 +1,4 @@
+<!--pages/dragDemo/dragDemo.wxml-->
+<text>pages/dragDemo/dragDemo.wxml</text>
+
+<view bindtouchmove="bindtouchmove" bindtouchstart="bindtouchstart" bindtouchend="bindtouchend" class="main" style="transform:translate({{transX}}px,{{transY}}px)" id="touchableView">我可以拖</view>

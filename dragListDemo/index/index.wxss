@@ -1,0 +1,19 @@
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+.itemBox
+{
+  height:60rpx;
+  width: 100%;
+  border:1px dashed blueviolet;
+  padding-left:50rpx;
+}
+.listBox
+{
+  height: 90rpx;
+  width:100%;
+  padding-left: 60rpx;
+  border:1px solid greenyellow;
+  background-color: honeydew;
+}

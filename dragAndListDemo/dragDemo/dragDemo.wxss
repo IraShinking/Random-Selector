@@ -1,0 +1,13 @@
+/* pages/dragDemo/dragDemo.wxss */
+page{
+  background-color: azure;
+}
+
+.main
+{
+  height: 90rpx;
+  width:100%;
+  margin:10rpx;
+  background-color:#00809e ;
+  color:#fff;
+}
