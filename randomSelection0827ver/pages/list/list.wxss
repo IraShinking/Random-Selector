@@ -1,0 +1,26 @@
+/* pages/list/list.wxss */
+
+page {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+/*列表名所在box*/
+.list_name_box{
+  border-bottom: 1px solid #efefef;
+  height: 90rpx;
+}
+/*图标样式*/
+.icon
+{
+  width: 50rpx;
+  height:50rpx;
+  margin-right: 50rpx;
+}
+.changemovenow {
+  width: 100%;
+  height: 60px !important;
+}
+
+
+

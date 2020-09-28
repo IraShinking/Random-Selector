@@ -1,0 +1,72 @@
+/* pages/about/about.wxss */
+page{
+  background: #fff;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.aboutInfo
+{
+  background-color: #F57F85;
+  padding-top: 40rpx;
+  align-items: center;
+  height:100rpx;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  font-size: medium;
+  color:white;
+}
+
+.rabbit{
+  height:260rpx;
+  width:260rpx;
+  margin:60rpx;
+}
+
+.p
+{
+  display: flex;
+  margin: 15rpx;
+  flex-direction: column;
+  justify-content:stretch;
+  align-items: center;
+
+}
+.p text{
+  margin: 10rpx;
+  font-size: small;
+  color:gray;
+}
+.consult
+{
+  display: flex;
+  margin: 15rpx;
+  font-style: normal;
+  align-items: center;
+  flex-direction: row;
+}
+.consultButton
+{
+  color: #F57F85;
+  align-items: baseline;
+}
+.WePic
+{
+  height:90rpx;
+  width:90rpx;
+  margin:10rpx;
+}
+.HeartPic
+{
+  height: 80rpx;
+  width: 80rpx;
+  margin:10rpx;
+}
+.rabbitPic
+{
+  height: 110rpx;
+  width: 110rpx;
+  margin:10rpx;
+}

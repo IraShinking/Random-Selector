@@ -1,0 +1,47 @@
+<!--pages/list/list.wxml-->
+<view class="banXwayScroll">
+<view class="userInfo">
+	<open-data type="userAvatarUrl" class="userinfo-avatar"></open-data>
+	<image src='../../images/add5.png' class="add"  catchtap="addList"></image>
+	<text class="listNum">列表数: {{list.length}}</text>
+</view>
+
+<view id="movebox">
+	<block wx:for='{{list}}' wx:key='this' wx:for-item='parentItem' wx:for-index='parentIndex'>
+		<view data-parentindex='{{parentIndex}}' catchlongpress="dragList" catchtouchmove="listItemMove" catchtouchend="listItemMove" id="movelist{{parentIndex}}" style="{{nowmoveindex==parentIndex?('position:absolute;color:#F57F85;top:'+movetop+'px;height:'+itemheight+'px;'):''}};">
+			<view class="{{moveoutindex==parentIndex?'changemovenow':''}}" style="height:0;transition: height 0.2s;"></view>
+			<mp-slideview buttons="{{slideButtons}}" icon="{{true}}" bindbuttontap="buttonTap" data-index='{{index}}' data-parentindex='{{parentIndex}}'>
+				<view id="listNameBox" class='list_name_box' wx:key='{{parentItem}}' style="position:relative;">
+					<image src="../../images/sort2.png" class="icon"></image>
+					<text id="listName" catchtap='editListName'  class='list_item_name {{parentItem.inbox &&"inbox"}}'
+                data-parentindex='{{parentIndex}}'  wx:if='{{!parentItem.listNameEdit}}'>{{parentItem.listName}}</text>
+					<!--双击切换输入框-->
+					<!--渲染text时edit值为假，但wx：if的值为真-->
+					<input id="editListName" wx:if="{{parentItem.listNameEdit}}" data-parentindex='{{parentIndex}}' placeholder="请输入新的列表名" bindblur="editName" auto-focus="true"> data-parentindex='{{parentIndex}}' ></input>
+					<!--修改列表名-->
+					<image id="addListItem" src="../../images/add.png" class="icon" style="margin-right:40rpx;" catchtap='addTap' data-parentindex='{{parentIndex}}' wx:if='{{parentItem.show}}'></image>
+					<!--添加列表-->
+					<!--同样思考是否使用hidden逻辑-->
+					<image id="openList" src='../../images/open1.png' class='icon_down {{parentItem.show&&"icon_down_rotate"}}' catchtap='openTap' data-parentindex='{{parentIndex}}'></image>
+					<!--展开列表-->
+				</view>
+			</mp-slideview>
+			<!--注意mp-->
+		</view>
+		<view wx:if='{{parentItem.show}}'>
+			<view class='list_item' wx:for='{{parentItem.item}}' wx:key='this' data-index='{{index}}' data-parentindex='{{parentIndex}}'>
+				<mp-slideview buttons="{{slideButtons}}" icon="{{true}}" bindbuttontap="buttonItemTap" data-index='{{index}}' data-parentindex='{{parentIndex}}'>
+					<view class='list_item_name_box'>
+					<image src="../../images/list3.png" class="icon"></image>
+						<text id="ItemName"class='list_item_name {{item.inbox&&"inbox"}}' data-parentindex='{{parentIndex}}' data-index='{{index}}' catchtap="editItemName" wx:if="{{!item.itemNameEdit}}">{{item.itemName}}</text>
+						<!--坑 data-index 的括号里面要写 index 如果写	Index无法识别-->
+						<!--wx：if的条件为假，渲染text框 不知道为什么逻辑和列表的反过来了 坑：用了文本值 反过来才是0 无论如何都是1 -->
+						<input id="EditItem" class='list_item_name' data-parentindex='{{parentIndex}}' data-index='{{index}}' bindblur="editItem" wx:if="{{item.itemNameEdit}}" placeholder="请输入修改内容" auto-focus="true"></input>
+					</view>
+				</mp-slideview>
+			</view>
+		</view>
+	</block>
+</view>
+
+</view>
