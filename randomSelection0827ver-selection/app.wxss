@@ -1,0 +1,94 @@
+/**app.wxss**/
+
+page {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  
+}
+/*禁止页面左右拖动*/
+.banXwayScroll
+{
+  overflow-x:hidden;
+}
+/*顶端栏*/
+.userInfo 
+{
+  padding-top: 35rpx;
+  height: 120rpx;
+  padding-left:30rpx;
+  width: 100%;
+  background-color: #00819ec7;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+/*顶端栏 头像*/
+.userinfo-avatar {
+  width: 70rpx;
+  height: 70rpx;
+  overflow: hidden;
+  border-radius: 5px;
+  background-size: cover;
+  background-color: #fff;
+}
+/*顶端列表数*/
+.listNum {
+  flex: 3;
+  font-size: 34rpx;
+  color: #efefef;
+  margin-left:100rpx;
+}
+/*添加列表图标*/
+.add {
+  height: 65rpx;
+  width: 65rpx;
+  margin-left:30rpx;
+}
+/*列表名所在box*/
+.list_name_box{
+  background: #fff;
+  display: flex;
+  height: 80rpx;
+  align-items: center;
+  padding: 0 25rpx;
+  font-size: 32rpx;
+}
+/*子项目box*/
+.list_item_name_box{
+  background: #efefef;
+  font-size: 30rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 25rpx 0 25rpx;
+}
+/*子项目的列表*/
+.list_item{
+  display: flex;
+  flex-direction: row;
+  
+  }
+  /*项目box里的text样式*/
+.list_item_name{
+  flex: 1;
+}
+/*展开图标*/
+.icon_down{
+  margin-top: 10rpx;
+  width: 40rpx;
+  height:40rpx;
+  margin-left:40rpx;
+  margin-right: 20rpx;
+  transition:transform  0.3s;
+}
+/*旋转展开图标*/
+.icon_down_rotate{
+  transform:rotate(180deg);
+}
+/*归档样式*/
+.inbox{
+  text-decoration: line-through;
+  color: grey;
+}

@@ -1,0 +1,41 @@
+/**index.wxss**/
+page {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.scroll-view
+{
+  height:470rpx;
+  width:100%;
+  white-space: nowrap;
+  display: flex;
+  border:1px solid lightgrey;
+}
+/*列表名所在box*/
+.list_name_box{
+  display: inline-block;
+  border-bottom:1px dashed lightgray;
+}
+/*子项目box*/
+.list_item_name_box{
+  justify-content: center;
+}
+.chose
+{
+  background-color: lightgray;
+}
+/*已选中和抽取结果的样式*/
+.showChoose
+{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left:20rpx;
+  margin-right:10rpx;
+  margin-bottom: 5rpx;
+}
+.selectText
+{
+  margin:20rpx;
+}
